@@ -21,17 +21,15 @@ List<Product> parseproduct(String responseBody) {
 
 class Product {
   final String  name;
-  final double  price;
-  final String dosage;
-  final String dosage_unit;
+  
+  
   final String form;
   final String presentation;
 
   Product({
     required this.name,
-    required this.price,
-    required this.dosage,
-    required this.dosage_unit,
+   
+    
     required this.form,
     required this.presentation,
   });
@@ -39,9 +37,8 @@ class Product {
   factory Product.fromJson(Map<String, dynamic> json) {
     return Product(
       name: json['name'] as String,
-      price: json['price'] as double,
-      dosage: json['dosage'] as String,
-      dosage_unit: json['dosage'] as String,
+      
+     
       form: json['form'] as String,
       presentation: json['presentation'] as String,
     );
@@ -97,7 +94,7 @@ class ProductList extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView.builder(
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 1,
+        crossAxisCount: 4,
       ),
       itemCount: products.length,
       itemBuilder: (context, index) {
